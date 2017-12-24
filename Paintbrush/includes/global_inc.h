@@ -7,12 +7,16 @@
 #ifndef GLOBAL_INC_H_INCLUDED
 #define GLOBAL_INC_H_INCLUDED
 
+#include <SDL2/SDL.h>
+#include "SDL2/SDL2_framerate.h"
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+#include <libconfig.h>
+
 #include "defines.h"
-#include "inits.h"
 #include "quit.h"
 #include "fonctions.h"
 #include "game_fonctions.h"
 #include "players.h"
-#include "painters.h"
 
 #endif
