@@ -20,6 +20,12 @@ EXEC = $(BIN_DIR)/Paintbrush
 
 all: $(EXEC)
 
+../Docs/html/*: $(SRC_DIR)/*.c $(INC_DIR)/*.h
+../Docs/latex/*: $(SRC_DIR)/*.c $(INC_DIR)/*.h
+
+documentation: ../Docs/html/* ../Docs/latex/*
+	doxygen ../Doxyfile
+
 clean:
 	rm -f $(OBJ_DIR)/*.o $(EXEC) $(SRC_DIR)/*.c~ $(INC_DIR)/*.h~
 
