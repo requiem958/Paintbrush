@@ -4,7 +4,6 @@
  *  \version 0.1
  */
 
-#include "defines.h"
 #include "fonctions.h"
 /** \fn void str_replace( char** s, int token, int replacement )
  *  \brief Function that replace one token by another in a given string
