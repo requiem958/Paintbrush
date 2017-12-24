@@ -1,0 +1,200 @@
+\section{Types de Bases}
+\label{group___bases___types}\index{Types de Bases@{Types de Bases}}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Direction\+Vector}
+\item 
+struct \textbf{ Speed\+Vector}
+\item 
+struct \textbf{ Screen}
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Direction} \{ \textbf{ D\+I\+R\+\_\+\+S\+T\+OP} =0, 
+\textbf{ D\+I\+R\+\_\+\+A\+C\+T\+I\+VE} =1, 
+\textbf{ D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE} =-\/1
+ \}
+\item 
+enum \textbf{ Brush\+Size} \{ \textbf{ B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE} =16, 
+\textbf{ B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL} =32, 
+\textbf{ B\+R\+U\+S\+H\+\_\+\+B\+IG} =64
+ \}
+\item 
+enum \textbf{ Speed} \{ \textbf{ S\+P\+E\+E\+D\+\_\+\+N\+U\+LL} =0, 
+\textbf{ S\+P\+E\+E\+D\+\_\+\+S\+L\+OW} =2, 
+\textbf{ S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE} =4, 
+\textbf{ S\+P\+E\+E\+D\+\_\+\+F\+A\+ST} =6
+ \}
+\item 
+enum \textbf{ Game\+State} \{ \textbf{ S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}, 
+\textbf{ S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}, 
+\textbf{ S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}, 
+\textbf{ S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON}
+ \}
+\item 
+enum \textbf{ Control\+Keys} \{ \textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT} =0, 
+\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT} =1, 
+\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP} =2, 
+\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN} =3
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+
+
+\subsection{Documentation du type de l\textquotesingle{}énumération}
+\mbox{\label{group___bases___types_ga044b5d604dc46a25328861ae39e16a84}} 
+\index{Types de Bases@{Types de Bases}!Brush\+Size@{Brush\+Size}}
+\index{Brush\+Size@{Brush\+Size}!Types de Bases@{Types de Bases}}
+\subsubsection{Brush\+Size}
+{\footnotesize\ttfamily enum \textbf{ Brush\+Size}}
+
+
+
+{\ttfamily \#include $<$\textbf{ types.\+h}$>$}
+
+Enumeration of values related to the size of a Brush, for a painter. \begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE@{B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE@{B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE}}}\mbox{\label{group___bases___types_gga044b5d604dc46a25328861ae39e16a84aaa18849d3fba3457e62eea0e0730fe50}} 
+B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE&Size of little painter (malus) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL@{B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL@{B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL}}}\mbox{\label{group___bases___types_gga044b5d604dc46a25328861ae39e16a84a48bb202932d6bf0c818e4ed5e1a02bec}} 
+B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL&Size of medium painter (normal) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+R\+U\+S\+H\+\_\+\+B\+IG@{B\+R\+U\+S\+H\+\_\+\+B\+IG}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!B\+R\+U\+S\+H\+\_\+\+B\+IG@{B\+R\+U\+S\+H\+\_\+\+B\+IG}}}\mbox{\label{group___bases___types_gga044b5d604dc46a25328861ae39e16a84ae73ce3f81bfb92c2ec6368effaaf9a6f}} 
+B\+R\+U\+S\+H\+\_\+\+B\+IG&Size of big painter (bonus) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne 36 du fichier types.\+h.
+
+\mbox{\label{group___bases___types_ga7c2c9ac31258225f5ea17a22c0118566}} 
+\index{Types de Bases@{Types de Bases}!Control\+Keys@{Control\+Keys}}
+\index{Control\+Keys@{Control\+Keys}!Types de Bases@{Types de Bases}}
+\subsubsection{Control\+Keys}
+{\footnotesize\ttfamily enum \textbf{ Control\+Keys}}
+
+
+
+{\ttfamily \#include $<$\textbf{ types.\+h}$>$}
+
+Indexes used for the Control\+Keys tabs. \begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT}}}\mbox{\label{group___bases___types_gga7c2c9ac31258225f5ea17a22c0118566a6e19dfe67c4de8c7715232088b48112a}} 
+C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT&ID of R\+I\+G\+H\+T\+\_\+\+K\+EY \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT}}}\mbox{\label{group___bases___types_gga7c2c9ac31258225f5ea17a22c0118566a24ae796a5281ca0405b64e399f3b8d21}} 
+C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT&ID of L\+E\+F\+T\+\_\+\+K\+EY \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP}}}\mbox{\label{group___bases___types_gga7c2c9ac31258225f5ea17a22c0118566ae0ec38777f1a3af77313cbe3ac9edb55}} 
+C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP&ID of U\+P\+\_\+\+K\+EY \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN@{C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN}}}\mbox{\label{group___bases___types_gga7c2c9ac31258225f5ea17a22c0118566a42cacc3b7cf156b51e661ae99239a448}} 
+C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN&ID of D\+O\+W\+N\+\_\+\+K\+EY \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne 72 du fichier types.\+h.
+
+\mbox{\label{group___bases___types_ga224b9163917ac32fc95a60d8c1eec3aa}} 
+\index{Types de Bases@{Types de Bases}!Direction@{Direction}}
+\index{Direction@{Direction}!Types de Bases@{Types de Bases}}
+\subsubsection{Direction}
+{\footnotesize\ttfamily enum \textbf{ Direction}}
+
+
+
+{\ttfamily \#include $<$\textbf{ types.\+h}$>$}
+
+Enumeration of values to define a moving direction. \begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+R\+\_\+\+S\+T\+OP@{D\+I\+R\+\_\+\+S\+T\+OP}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!D\+I\+R\+\_\+\+S\+T\+OP@{D\+I\+R\+\_\+\+S\+T\+OP}}}\mbox{\label{group___bases___types_gga224b9163917ac32fc95a60d8c1eec3aaa5056a7b1d3501fa52dcb9d5e30952fd9}} 
+D\+I\+R\+\_\+\+S\+T\+OP&When player is stopped (value used in calculus) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+R\+\_\+\+A\+C\+T\+I\+VE@{D\+I\+R\+\_\+\+A\+C\+T\+I\+VE}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!D\+I\+R\+\_\+\+A\+C\+T\+I\+VE@{D\+I\+R\+\_\+\+A\+C\+T\+I\+VE}}}\mbox{\label{group___bases___types_gga224b9163917ac32fc95a60d8c1eec3aaac1f3cc781396072a94af6a63ed0b3b75}} 
+D\+I\+R\+\_\+\+A\+C\+T\+I\+VE&When player is moving (value used in calculus) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE@{D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE@{D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE}}}\mbox{\label{group___bases___types_gga224b9163917ac32fc95a60d8c1eec3aaa4d259c8d18c10ac72f95616c06c06604}} 
+D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE&When player is reverse moving (value used in calculus) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne 25 du fichier types.\+h.
+
+\mbox{\label{group___bases___types_ga7899b65f1ea0f655e4bbf8d2a5714285}} 
+\index{Types de Bases@{Types de Bases}!Game\+State@{Game\+State}}
+\index{Game\+State@{Game\+State}!Types de Bases@{Types de Bases}}
+\subsubsection{Game\+State}
+{\footnotesize\ttfamily enum \textbf{ Game\+State}}
+
+
+
+{\ttfamily \#include $<$\textbf{ types.\+h}$>$}
+
+Enumeration of the states that the game can have. \begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT@{S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT@{S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}}}\mbox{\label{group___bases___types_gga7899b65f1ea0f655e4bbf8d2a5714285aaa31548ade48c0ad04f505fde3c06352}} 
+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT&The game is stopped, or not still beginning \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED@{S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED@{S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}}}\mbox{\label{group___bases___types_gga7899b65f1ea0f655e4bbf8d2a5714285a6291ce9aab12208cc66968c97a1ce7dd}} 
+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED&Pause mode of the game \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG@{S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG@{S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}}}\mbox{\label{group___bases___types_gga7899b65f1ea0f655e4bbf8d2a5714285af8f1d4013be7a14c51495005d39e7c0e}} 
+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG&Players are gaming \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON@{S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON@{S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON}}}\mbox{\label{group___bases___types_gga7899b65f1ea0f655e4bbf8d2a5714285a3e6d9d377c34fe670462631c02fa1a04}} 
+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON&We are in configuration steps \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne 59 du fichier types.\+h.
+
+\mbox{\label{group___bases___types_gad57b3fa8e45359906ac229567c209a63}} 
+\index{Types de Bases@{Types de Bases}!Speed@{Speed}}
+\index{Speed@{Speed}!Types de Bases@{Types de Bases}}
+\subsubsection{Speed}
+{\footnotesize\ttfamily enum \textbf{ Speed}}
+
+
+
+{\ttfamily \#include $<$\textbf{ types.\+h}$>$}
+
+Enumeration of values related to the speed of a painter. (Arbitrary values) \begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+E\+D\+\_\+\+N\+U\+LL@{S\+P\+E\+E\+D\+\_\+\+N\+U\+LL}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+P\+E\+E\+D\+\_\+\+N\+U\+LL@{S\+P\+E\+E\+D\+\_\+\+N\+U\+LL}}}\mbox{\label{group___bases___types_ggad57b3fa8e45359906ac229567c209a63aba4ec0911cfc1837800219c75001d5c7}} 
+S\+P\+E\+E\+D\+\_\+\+N\+U\+LL&The player is stopped \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+E\+D\+\_\+\+S\+L\+OW@{S\+P\+E\+E\+D\+\_\+\+S\+L\+OW}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+P\+E\+E\+D\+\_\+\+S\+L\+OW@{S\+P\+E\+E\+D\+\_\+\+S\+L\+OW}}}\mbox{\label{group___bases___types_ggad57b3fa8e45359906ac229567c209a63ac1d4c56fe55e217a20948e5dfdf15469}} 
+S\+P\+E\+E\+D\+\_\+\+S\+L\+OW&The player has a malus (moving slowly) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE@{S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE@{S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE}}}\mbox{\label{group___bases___types_ggad57b3fa8e45359906ac229567c209a63aa508b1cb1da1aa0e5e554a515a24b0f2}} 
+S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE&The player is moving normally \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+E\+D\+\_\+\+F\+A\+ST@{S\+P\+E\+E\+D\+\_\+\+F\+A\+ST}!Types de Bases@{Types de Bases}}\index{Types de Bases@{Types de Bases}!S\+P\+E\+E\+D\+\_\+\+F\+A\+ST@{S\+P\+E\+E\+D\+\_\+\+F\+A\+ST}}}\mbox{\label{group___bases___types_ggad57b3fa8e45359906ac229567c209a63a10e524d624d32a53f007da8032f61f59}} 
+S\+P\+E\+E\+D\+\_\+\+F\+A\+ST&The player is moving fastly, he has a bonus \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne 47 du fichier types.\+h.
+

@@ -1,0 +1,154 @@
+\section{Référence du fichier fonctions.\+c}
+\label{fonctions_8c}\index{fonctions.\+c@{fonctions.\+c}}
+{\ttfamily \#include \char`\"{}fonctions.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de fonctions.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{fonctions_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ str\+\_\+replace} (char $\ast$$\ast$s, int token, int replacement)
+\item 
+\mbox{\label{fonctions_8c_a100d09f9a57d44745299c28c63c98745}} 
+void {\bfseries dummy} ()
+\item 
+int \textbf{ readline} (char $\ast$s, int n)
+\item 
+\mbox{\label{fonctions_8c_a48c6792c544a90cd7a552667ce5bba4a}} 
+Uint32 {\bfseries get\+Pixel} (S\+D\+L\+\_\+\+Surface $\ast$surface, int x, int y)
+\item 
+void \textbf{ clear\+\_\+texture} (S\+D\+L\+\_\+\+Texture $\ast$texture, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\item 
+int \textbf{ set\+Render\+Draw\+Color} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, S\+D\+L\+\_\+\+Color $\ast$color)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Implementation of some functions that can be used anywhere. 
+
+\begin{DoxyAuthor}{Auteur}
+Marius Monnier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\label{fonctions_8c_ab0852adabab2829b722da4fc549ac6a9}} 
+\index{fonctions.\+c@{fonctions.\+c}!clear\+\_\+texture@{clear\+\_\+texture}}
+\index{clear\+\_\+texture@{clear\+\_\+texture}!fonctions.\+c@{fonctions.\+c}}
+\subsubsection{clear\+\_\+texture()}
+{\footnotesize\ttfamily void clear\+\_\+texture (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{texture,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Function that set a texture to black transparent texture (clear everything) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em texture} & pointer to the texture \\
+\hline
+{\em renderer} & pointer to the renderer that is used \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 104 du fichier fonctions.\+c.
+
+\mbox{\label{fonctions_8c_afe286242e48f523265fd5fcdae3f7358}} 
+\index{fonctions.\+c@{fonctions.\+c}!readline@{readline}}
+\index{readline@{readline}!fonctions.\+c@{fonctions.\+c}}
+\subsubsection{readline()}
+{\footnotesize\ttfamily int readline (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Function that read a line securely and make it a valid string. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s} & pointer that will store the string \\
+\hline
+{\em n} & number of character that will be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+E\+X\+I\+T\+\_\+\+S\+U\+C\+C\+E\+SS if success, E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE otherwise.
+\end{DoxyReturn}
+That function use fgets to create the string, and replace the final \textquotesingle{}~\newline
+\textquotesingle{} with a \textquotesingle{}\textbackslash{}0\textquotesingle{} to make the string valid. \begin{DoxyRefDesc}{A faire}
+\item[\textbf{ A faire}]A way to describe the error ? \end{DoxyRefDesc}
+
+
+Définition à la ligne 44 du fichier fonctions.\+c.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{fonctions_8c_afe286242e48f523265fd5fcdae3f7358_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{fonctions_8c_ad8ec5206bc6a89f1b70d8895523b7919}} 
+\index{fonctions.\+c@{fonctions.\+c}!set\+Render\+Draw\+Color@{set\+Render\+Draw\+Color}}
+\index{set\+Render\+Draw\+Color@{set\+Render\+Draw\+Color}!fonctions.\+c@{fonctions.\+c}}
+\subsubsection{set\+Render\+Draw\+Color()}
+{\footnotesize\ttfamily int set\+Render\+Draw\+Color (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{S\+D\+L\+\_\+\+Color $\ast$}]{color }\end{DoxyParamCaption})}
+
+
+
+Convenience function to set the color from a struct. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & pointer to the renderer that will be modified \\
+\hline
+{\em color} & Structure that store the color components \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 119 du fichier fonctions.\+c.
+
+\mbox{\label{fonctions_8c_afd361e8fd7c973935407a430d0c609a5}} 
+\index{fonctions.\+c@{fonctions.\+c}!str\+\_\+replace@{str\+\_\+replace}}
+\index{str\+\_\+replace@{str\+\_\+replace}!fonctions.\+c@{fonctions.\+c}}
+\subsubsection{str\+\_\+replace()}
+{\footnotesize\ttfamily void str\+\_\+replace (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{s,  }\item[{int}]{token,  }\item[{int}]{replacement }\end{DoxyParamCaption})}
+
+
+
+Function that replace one token by another in a given string. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s} & pointer to the string that will be modified \\
+\hline
+{\em token} & Character to search in string \\
+\hline
+{\em replacement} & Character that will replace token\\
+\hline
+\end{DoxyParams}
+That function did not return something because the original string is modified. We use strchr() to find the token.
+
+\begin{DoxyRefDesc}{A faire}
+\item[\textbf{ A faire}]Some validity tests for token and replacement. \end{DoxyRefDesc}
+
+
+Définition à la ligne 19 du fichier fonctions.\+c.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{fonctions_8c_afd361e8fd7c973935407a430d0c609a5_icgraph}
+\end{center}
+\end{figure}

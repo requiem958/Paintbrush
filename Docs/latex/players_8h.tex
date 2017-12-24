@@ -1,0 +1,77 @@
+\section{Référence du fichier players.\+h}
+\label{players_8h}\index{players.\+h@{players.\+h}}
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonctions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de players.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{players_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{players_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ player} $\ast$ \textbf{ create\+Player} ()
+\item 
+\mbox{\label{players_8h_aee97302da473b6f7f4f27926d73abb3d}} 
+void {\bfseries set\+DirectionX} (\textbf{ player} $\ast$, const \textbf{ Direction})
+\item 
+\mbox{\label{players_8h_a16ad2824483db11ccb9602acb5e1ac29}} 
+void {\bfseries set\+DirectionY} (\textbf{ player} $\ast$, const \textbf{ Direction})
+\item 
+\mbox{\label{players_8h_a99eb8726cbcfd95c0634027792344069}} 
+void {\bfseries set\+Direction} (\textbf{ player} $\ast$, const \textbf{ Direction}, const \textbf{ Direction})
+\item 
+\mbox{\label{players_8h_a26832b35489278e57f5fd92bfaf89216}} 
+void {\bfseries move\+Player} (\textbf{ player} $\ast$)
+\item 
+\mbox{\label{players_8h_a8ceebefb9c41af5ee039bd4df9119f92}} 
+int {\bfseries delete\+Player} (\textbf{ player} $\ast$play)
+\item 
+\mbox{\label{players_8h_a8bdc5cc263575cf5cf97c08e8d596293}} 
+int {\bfseries delete\+All\+Players} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Define players related functions prototypes. 
+
+\begin{DoxyAuthor}{Auteur}
+Marius Monnier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\label{players_8h_a62a16a32a68ba4359f95213cd4e39e85}} 
+\index{players.\+h@{players.\+h}!create\+Player@{create\+Player}}
+\index{create\+Player@{create\+Player}!players.\+h@{players.\+h}}
+\subsubsection{create\+Player()}
+{\footnotesize\ttfamily \textbf{ player} $\ast$ create\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function that create a player in interaction with user. 
+
+\begin{DoxyReturn}{Renvoie}
+A pointer to the created player if success, N\+U\+LL otherwise.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{A faire}
+\item[\textbf{ A faire}]Change the way to preconfigured players. \end{DoxyRefDesc}
+
+
+Définition à la ligne 240 du fichier players.\+c.
+

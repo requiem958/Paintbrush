@@ -1,0 +1,166 @@
+\section{Référence de la structure Game\+Data}
+\label{struct_game_data}\index{Game\+Data@{Game\+Data}}
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Graphe de collaboration de Game\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{struct_game_data__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+config\+\_\+t \textbf{ config\+File}
+\item 
+char $\ast$ \textbf{ app\+Name}
+\item 
+\textbf{ Game\+State} \textbf{ current\+\_\+state}
+\item 
+S\+D\+L\+\_\+\+Pixel\+Format $\ast$ \textbf{ pixelformat}
+\item 
+S\+D\+L\+\_\+\+Window $\ast$$\ast$ \textbf{ window}
+\item 
+int \textbf{ window\+\_\+width}
+\item 
+int \textbf{ window\+\_\+height}
+\item 
+unsigned int \textbf{ number\+Of\+Player}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$$\ast$ \textbf{ renderer}
+\item 
+F\+P\+Smanager $\ast$$\ast$ \textbf{ manager}
+\item 
+\textbf{ Screen} \textbf{ display}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+All data that the game must have to be ready 
+
+Définition à la ligne 122 du fichier types.\+h.
+
+
+
+\subsection{Documentation des champs}
+\mbox{\label{struct_game_data_adefe7f7f4772ff051f1fdd5b6693d62c}} 
+\index{Game\+Data@{Game\+Data}!app\+Name@{app\+Name}}
+\index{app\+Name@{app\+Name}!Game\+Data@{Game\+Data}}
+\subsubsection{app\+Name}
+{\footnotesize\ttfamily char$\ast$ app\+Name}
+
+{\bfseries Unused} {\bfseries nowadays}, will define the name of the window and app 
+
+Définition à la ligne 125 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_af27d1b9ec87e6f2462c8b180de4de676}} 
+\index{Game\+Data@{Game\+Data}!config\+File@{config\+File}}
+\index{config\+File@{config\+File}!Game\+Data@{Game\+Data}}
+\subsubsection{config\+File}
+{\footnotesize\ttfamily config\+\_\+t config\+File}
+
+{\bfseries Unused} {\bfseries nowadays}, but the data will be readable 
+
+Définition à la ligne 124 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_a6ed9079283c2964b8f1c5bfccfc8727e}} 
+\index{Game\+Data@{Game\+Data}!current\+\_\+state@{current\+\_\+state}}
+\index{current\+\_\+state@{current\+\_\+state}!Game\+Data@{Game\+Data}}
+\subsubsection{current\+\_\+state}
+{\footnotesize\ttfamily \textbf{ Game\+State} current\+\_\+state}
+
+Used for launch functions 
+
+Définition à la ligne 126 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_ac64687171d64c7b90dac06fce8b37941}} 
+\index{Game\+Data@{Game\+Data}!display@{display}}
+\index{display@{display}!Game\+Data@{Game\+Data}}
+\subsubsection{display}
+{\footnotesize\ttfamily \textbf{ Screen} display}
+
+\doxyref{Screen}{p.}{struct_screen} structure to displaying 
+
+Définition à la ligne 134 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_abe833816151a2cf1782b845741049c02}} 
+\index{Game\+Data@{Game\+Data}!manager@{manager}}
+\index{manager@{manager}!Game\+Data@{Game\+Data}}
+\subsubsection{manager}
+{\footnotesize\ttfamily F\+P\+Smanager$\ast$$\ast$ manager}
+
+Pointer to the F\+PS manager of the game 
+
+Définition à la ligne 133 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_ac38c6c1d6a4e97b6882c0a32036802e1}} 
+\index{Game\+Data@{Game\+Data}!number\+Of\+Player@{number\+Of\+Player}}
+\index{number\+Of\+Player@{number\+Of\+Player}!Game\+Data@{Game\+Data}}
+\subsubsection{number\+Of\+Player}
+{\footnotesize\ttfamily unsigned int number\+Of\+Player}
+
+Number of players that plays 
+
+Définition à la ligne 131 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_a8a7fabd77cba73c77e75ae861ebe1c4d}} 
+\index{Game\+Data@{Game\+Data}!pixelformat@{pixelformat}}
+\index{pixelformat@{pixelformat}!Game\+Data@{Game\+Data}}
+\subsubsection{pixelformat}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Pixel\+Format$\ast$ pixelformat}
+
+Pixel format of the screen 
+
+Définition à la ligne 127 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_aaa07ec38523f6fba243ce04fdd7f4619}} 
+\index{Game\+Data@{Game\+Data}!renderer@{renderer}}
+\index{renderer@{renderer}!Game\+Data@{Game\+Data}}
+\subsubsection{renderer}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$$\ast$ renderer}
+
+Pointer to the renderer 
+
+Définition à la ligne 132 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_ad6bf7691ca1d4c87c4118cc76da2b264}} 
+\index{Game\+Data@{Game\+Data}!window@{window}}
+\index{window@{window}!Game\+Data@{Game\+Data}}
+\subsubsection{window}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$$\ast$ window}
+
+Pointer to the main window 
+
+Définition à la ligne 128 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_aca33f926b061680d857699a22f676418}} 
+\index{Game\+Data@{Game\+Data}!window\+\_\+height@{window\+\_\+height}}
+\index{window\+\_\+height@{window\+\_\+height}!Game\+Data@{Game\+Data}}
+\subsubsection{window\+\_\+height}
+{\footnotesize\ttfamily int window\+\_\+height}
+
+Window height in pixels 
+
+Définition à la ligne 130 du fichier types.\+h.
+
+\mbox{\label{struct_game_data_a0e2e740afd510cfe652a1836ffbad209}} 
+\index{Game\+Data@{Game\+Data}!window\+\_\+width@{window\+\_\+width}}
+\index{window\+\_\+width@{window\+\_\+width}!Game\+Data@{Game\+Data}}
+\subsubsection{window\+\_\+width}
+{\footnotesize\ttfamily int window\+\_\+width}
+
+Window width in pixels 
+
+Définition à la ligne 129 du fichier types.\+h.
+
+
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ types.\+h}\end{DoxyCompactItemize}
