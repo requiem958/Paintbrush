@@ -1,0 +1,94 @@
+\section{Référence du fichier players.\+c}
+\label{players_8c}\index{players.\+c@{players.\+c}}
+{\ttfamily \#include \char`\"{}players.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de players.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{players_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{players_8c_a171ccb671f0ad6a46718654fa0bffe10}} 
+void {\bfseries set\+DirectionX} (\textbf{ player} $\ast$p, const \textbf{ Direction} dx)
+\item 
+\mbox{\label{players_8c_a63a649863120589ee459cf7a08902f95}} 
+void {\bfseries set\+DirectionY} (\textbf{ player} $\ast$p, const \textbf{ Direction} dy)
+\item 
+\mbox{\label{players_8c_a84c122fe1272a6e56f76ea5597697bbe}} 
+void {\bfseries set\+Direction} (\textbf{ player} $\ast$p, const \textbf{ Direction} dx, const \textbf{ Direction} dy)
+\item 
+\mbox{\label{players_8c_a8ceebefb9c41af5ee039bd4df9119f92}} 
+int {\bfseries delete\+Player} (\textbf{ player} $\ast$play)
+\item 
+\mbox{\label{players_8c_abca54efb4fd2424881e91bcd7da8061a}} 
+void {\bfseries set\+Score} (\textbf{ player} $\ast$p, double score)
+\item 
+\mbox{\label{players_8c_a252268c4afe2b752fd8b66f9c96a8df0}} 
+void {\bfseries set\+Speed} (\textbf{ player} $\ast$p, \textbf{ Speed} sx, \textbf{ Speed} sy)
+\item 
+\textbf{ player} $\ast$ \textbf{ create\+Player} ()
+\item 
+\mbox{\label{players_8c_ae755369dabeb0a70730fbefb1d2d0972}} 
+void {\bfseries move\+Player} (\textbf{ player} $\ast$p)
+\item 
+\mbox{\label{players_8c_a8bdc5cc263575cf5cf97c08e8d596293}} 
+int {\bfseries delete\+All\+Players} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Data} $\ast$ \textbf{ data}
+\item 
+\mbox{\label{players_8c_aa6e0d10ac9dacf902c351a3cbb8a474d}} 
+\textbf{ player} $\ast$ {\bfseries players} [$\,$]
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Implement public players related functions and static painters related functions. 
+
+\begin{DoxyAuthor}{Auteur}
+Marius Monnier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\label{players_8c_a232779641e812885a1fbc89b620b4848}} 
+\index{players.\+c@{players.\+c}!create\+Player@{create\+Player}}
+\index{create\+Player@{create\+Player}!players.\+c@{players.\+c}}
+\subsubsection{create\+Player()}
+{\footnotesize\ttfamily \textbf{ player}$\ast$ create\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function that create a player in interaction with user. 
+
+\begin{DoxyReturn}{Renvoie}
+A pointer to the created player if success, N\+U\+LL otherwise.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{A faire}
+\item[\textbf{ A faire}]Change the way to preconfigured players. \end{DoxyRefDesc}
+
+
+Définition à la ligne 240 du fichier players.\+c.
+
+
+
+\subsection{Documentation des variables}
+\mbox{\label{players_8c_a882ad77a7df764b098f98136eb56a83a}} 
+\index{players.\+c@{players.\+c}!data@{data}}
+\index{data@{data}!players.\+c@{players.\+c}}
+\subsubsection{data}
+{\footnotesize\ttfamily \textbf{ Game\+Data}$\ast$ data}
+
+$<$ Variable globale d\textquotesingle{}accès aux paramètres Tableau global des joueurs 
+
+Définition à la ligne 12 du fichier main.\+c.
+

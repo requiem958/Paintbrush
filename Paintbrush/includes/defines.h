@@ -7,12 +7,15 @@
 #ifndef DEFINES_H_INCLUDED
 #define DEFINES_H_INCLUDED
 
+<<<<<<< HEAD
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_framerate.h>
 #include <SDL2/SDL_image.h>
 #include "SDL2/SDL_ttf.h"
 #include "libconfig/libconfig.h"
 
+=======
+>>>>>>> aa93215c9937fad2f1dbfc3f3ce299ed4e1e5e8b
 #define SCREEN_HEIGHT   (1024)  /**< Define window height */
 #define SCREEN_WIDTH    (1080)  /**< Define window width */
 
@@ -21,11 +24,11 @@
 #define K               *(1000) /**< Define a semi "converting" operator */
 #define CTRL_KEYS_NUMBER 4      /**< Define number of control keys for a player */
 
-#define MAX_PLAYERS      4      /**< Define maximum number of players */
-#define NAME_STRING_MAX  32     /**< Define maximum size of player's name */
-#define TO_UNDUMMY      1       /**< Operator for TODO */
+#define MAX_PLAYERS      (4)      /**< Define maximum number of players */
+#define NAME_STRING_MAX  (32)     /**< Define maximum size of player's name */
+#define TO_UNDUMMY      (1)       /**< Operator for TODO */
 
-#define NB_IMG_PER_SECOND   30  /**< Number of img per second, for the fps manager */
+#define NB_IMG_PER_SECOND   (30)  /**< Number of img per second, for the fps manager */
 
 /** \def CLEAR_BUFFER
  *

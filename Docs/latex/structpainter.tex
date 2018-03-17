@@ -1,0 +1,124 @@
+\section{Référence de la structure painter}
+\label{structpainter}\index{painter@{painter}}
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\subsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ sprite\+Right}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ sprite\+Left}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$$\ast$ \textbf{ active\+Sprit}
+\item 
+S\+D\+L\+\_\+\+Rect \textbf{ position}
+\item 
+S\+D\+L\+\_\+\+Keycode \textbf{ keys} [\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+S\+\_\+\+N\+U\+M\+B\+ER}]
+\item 
+int \textbf{ brush\+Size}
+\item 
+Uint32 \textbf{ color}
+\item 
+S\+D\+L\+\_\+\+Color \textbf{ struct\+\_\+color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Structure of a painter used everywhere. 
+
+Définition à la ligne 142 du fichier types.\+h.
+
+
+
+\subsection{Documentation des champs}
+\mbox{\label{structpainter_a386313f47e956f1544cb6bcd2416836c}} 
+\index{painter@{painter}!active\+Sprit@{active\+Sprit}}
+\index{active\+Sprit@{active\+Sprit}!painter@{painter}}
+\subsubsection{active\+Sprit}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$$\ast$ active\+Sprit}
+
+The sprite that is actually used 
+
+Définition à la ligne 146 du fichier types.\+h.
+
+\mbox{\label{structpainter_a9a97e37d5842d96acd10398a11107e96}} 
+\index{painter@{painter}!brush\+Size@{brush\+Size}}
+\index{brush\+Size@{brush\+Size}!painter@{painter}}
+\subsubsection{brush\+Size}
+{\footnotesize\ttfamily int brush\+Size}
+
+Size of the brush of the painter 
+
+Définition à la ligne 157 du fichier types.\+h.
+
+\mbox{\label{structpainter_afd133e412238ed9f1e3ba52397115e8d}} 
+\index{painter@{painter}!color@{color}}
+\index{color@{color}!painter@{painter}}
+\subsubsection{color}
+{\footnotesize\ttfamily Uint32 color}
+
+Coded R\+GB color of the painter 
+
+Définition à la ligne 160 du fichier types.\+h.
+
+\mbox{\label{structpainter_aaf7678c8bdea5f0a614d6bdb5af675fb}} 
+\index{painter@{painter}!keys@{keys}}
+\index{keys@{keys}!painter@{painter}}
+\subsubsection{keys}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Keycode keys[\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+S\+\_\+\+N\+U\+M\+B\+ER}]}
+
+The control keys to move the painter 
+
+Définition à la ligne 155 du fichier types.\+h.
+
+\mbox{\label{structpainter_ac06cf6a292dc0e70e28b394fa481aef2}} 
+\index{painter@{painter}!position@{position}}
+\index{position@{position}!painter@{painter}}
+\subsubsection{position}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect position}
+
+
+
+The position and size of the player. 
+
+Actually, the {\bfseries x} and {\bfseries y} members of the S\+D\+L\+\_\+\+Rect struct are used for position and the {\bfseries h} and {\bfseries w} members of the S\+D\+L\+\_\+\+Rect struct are equals to brush\+Size 
+
+Définition à la ligne 154 du fichier types.\+h.
+
+\mbox{\label{structpainter_a6172789122e545529f4a04419a0835f7}} 
+\index{painter@{painter}!sprite\+Left@{sprite\+Left}}
+\index{sprite\+Left@{sprite\+Left}!painter@{painter}}
+\subsubsection{sprite\+Left}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ sprite\+Left}
+
+The sprite when the painter is moving to the left 
+
+Définition à la ligne 145 du fichier types.\+h.
+
+\mbox{\label{structpainter_a9e331a61bff9303277f1d5666aa85c4d}} 
+\index{painter@{painter}!sprite\+Right@{sprite\+Right}}
+\index{sprite\+Right@{sprite\+Right}!painter@{painter}}
+\subsubsection{sprite\+Right}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ sprite\+Right}
+
+The sprite when the painter is moving to the right 
+
+Définition à la ligne 144 du fichier types.\+h.
+
+\mbox{\label{structpainter_ad40888d04f08a9b49fd8c442327fddef}} 
+\index{painter@{painter}!struct\+\_\+color@{struct\+\_\+color}}
+\index{struct\+\_\+color@{struct\+\_\+color}!painter@{painter}}
+\subsubsection{struct\+\_\+color}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Color struct\+\_\+color}
+
+Detailled R\+G\+BA color of the painter 
+
+Définition à la ligne 161 du fichier types.\+h.
+
+
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ types.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,54 @@
+\section{Référence du fichier game\+\_\+fonctions.\+h}
+\label{game__fonctions_8h}\index{game\+\_\+fonctions.\+h@{game\+\_\+fonctions.\+h}}
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonctions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}players.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de game\+\_\+fonctions.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__fonctions_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{game__fonctions_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{game__fonctions_8h_ab3538182e6fae78c414c6b371c6f9b77}} 
+void {\bfseries launch\+\_\+menu} (void)
+\item 
+\mbox{\label{game__fonctions_8h_ae1e52800cf2d4cb84e2c71d6af390622}} 
+void {\bfseries launch\+\_\+game} (void)
+\item 
+\mbox{\label{game__fonctions_8h_af44b6382ab2dcccef07d61d735915bfa}} 
+void {\bfseries launch\+\_\+replay} (void)
+\item 
+\mbox{\label{game__fonctions_8h_ae38078a115bc28d56f1e559a188e7437}} 
+int {\bfseries init\+Window\+And\+Renderer} (S\+D\+L\+\_\+\+Window $\ast$$\ast$window, S\+D\+L\+\_\+\+Renderer $\ast$$\ast$renderer, const unsigned int width, const unsigned int height, const char $\ast$title)
+\item 
+\mbox{\label{game__fonctions_8h_a4dd7e919802a1f82dd6020412e5db80f}} 
+int {\bfseries init\+S\+D\+L\+Systems} (F\+P\+Smanager $\ast$manager)
+\item 
+\mbox{\label{game__fonctions_8h_a5c9adc58626460dbf4f5280f43cafebf}} 
+\textbf{ Game\+Data} $\ast$ {\bfseries create\+Game\+Data} (S\+D\+L\+\_\+\+Window $\ast$$\ast$window, S\+D\+L\+\_\+\+Renderer $\ast$$\ast$renderer, char $\ast$app\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Define the prototypes of core functions. 
+
+\begin{DoxyAuthor}{Auteur}
+Marius Monnier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}

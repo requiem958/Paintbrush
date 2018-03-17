@@ -11,7 +11,7 @@
 /**< Variable globale d'accès aux paramètres */
 GameData* data = NULL;
 /**< Tableau global des joueurs */
-Player* players[MAX_PLAYERS];
+player* players[MAX_PLAYERS];
 
 int main( void )
 {

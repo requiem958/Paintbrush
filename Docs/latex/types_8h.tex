@@ -1,0 +1,80 @@
+\section{Référence du fichier types.\+h}
+\label{types_8h}\index{types.\+h@{types.\+h}}
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}S\+D\+L2/\+S\+D\+L2\+\_\+framerate.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$libconfig.\+h$>$}\newline
+Graphe des dépendances par inclusion de types.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{types_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{types_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Direction\+Vector}
+\item 
+struct \textbf{ Speed\+Vector}
+\item 
+struct \textbf{ Screen}
+\item 
+struct \textbf{ Game\+Data}
+\item 
+struct \textbf{ painter}
+\item 
+struct \textbf{ player}
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Direction} \{ \textbf{ D\+I\+R\+\_\+\+S\+T\+OP} =0, 
+\textbf{ D\+I\+R\+\_\+\+A\+C\+T\+I\+VE} =1, 
+\textbf{ D\+I\+R\+\_\+\+R\+E\+V\+E\+R\+SE} =-\/1
+ \}
+\item 
+enum \textbf{ Brush\+Size} \{ \textbf{ B\+R\+U\+S\+H\+\_\+\+L\+I\+T\+T\+LE} =16, 
+\textbf{ B\+R\+U\+S\+H\+\_\+\+N\+O\+R\+M\+AL} =32, 
+\textbf{ B\+R\+U\+S\+H\+\_\+\+B\+IG} =64
+ \}
+\item 
+enum \textbf{ Speed} \{ \textbf{ S\+P\+E\+E\+D\+\_\+\+N\+U\+LL} =0, 
+\textbf{ S\+P\+E\+E\+D\+\_\+\+S\+L\+OW} =2, 
+\textbf{ S\+P\+E\+E\+D\+\_\+\+A\+V\+E\+R\+A\+GE} =4, 
+\textbf{ S\+P\+E\+E\+D\+\_\+\+F\+A\+ST} =6
+ \}
+\item 
+enum \textbf{ Game\+State} \{ \textbf{ S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}, 
+\textbf{ S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}, 
+\textbf{ S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}, 
+\textbf{ S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON}
+ \}
+\item 
+enum \textbf{ Control\+Keys} \{ \textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+HT} =0, 
+\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+FT} =1, 
+\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+UP} =2, 
+\textbf{ C\+T\+R\+L\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN} =3
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Types needed in program. 
+
+\begin{DoxyAuthor}{Auteur}
+Marius Monnier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}

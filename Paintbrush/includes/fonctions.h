@@ -7,7 +7,8 @@
 #ifndef FONCTIONS_H_INCLUDED
 #define FONCTIONS_H_INCLUDED
 
-#include "global_types.h"
+#include <SDL2/SDL.h>
+#include "defines.h"
 
 Uint32 getPixel( SDL_Surface* surface, int x, int y );
 void str_replace(char **s, int token, int replacement);
