@@ -8,16 +8,16 @@ WORKDIR = `pwd`
 CC = gcc
 CXX = g++
 AR = ar
-LD = g++
+LD = ld
 WINDRES = windres
 
 INC = -Iincludes
-CFLAGS = -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-default -Weffc++ -Wmain -pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -ansi `sd2l-config --cflags`
+CFLAGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-default -Wmain -pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -ansi -std=c99
 RESINC = 
 LIBDIR = -Llibs -L/lib64 -L/lib/x86_64-linux-gnu
 LIB = 
 LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_gfx -lconfig
-SRC = src
+SRC =
 
 INC_DEBUG = $(INC)
 SRC_DEBUG = $(SRC)
