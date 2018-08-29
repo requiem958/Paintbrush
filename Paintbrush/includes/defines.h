@@ -7,6 +7,12 @@
 #ifndef DEFINES_H_INCLUDED
 #define DEFINES_H_INCLUDED
 
+#include <SDL2/SDL.h>
+#include <SDL2/SDL2_framerate.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+#include <libconfig.h>
+
 #define SCREEN_HEIGHT   (1024)  /**< Define window height */
 #define SCREEN_WIDTH    (1080)  /**< Define window width */
 

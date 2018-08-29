@@ -1,14 +1,12 @@
 WORKDIR = `pwd`
 
 CC = gcc
-
 INC = -Iincludes
 CFLAGS = -Wshadow -Winit-self \
 	 -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal \
 	 -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs \
 	 -Wswitch-default -Wmain -pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -ansi \
 	 -std=c99 -g `sdl2-config --cflags`
-
 LIBDIR = -L/lib64 -L/lib/x86_64-linux-gnu
 LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_gfx -lconfig
 INC_DIR = includes
