@@ -9,7 +9,7 @@ CFLAGS = -Wshadow -Winit-self \
 	 -Wswitch-default -Wmain -pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -ansi \
 	 -std=c99 -g `sdl2-config --cflags`
 
-LIBDIR = -Llibs -L/lib64 -L/lib/x86_64-linux-gnu
+LIBDIR = -L/lib64 -L/lib/x86_64-linux-gnu
 LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_gfx -lconfig
 INC_DIR = includes
 SRC_DIR = src
@@ -19,6 +19,12 @@ BIN_DIR = bin
 EXEC = $(BIN_DIR)/Paintbrush
 
 all: $(EXEC)
+
+../Docs/html/*: $(SRC_DIR)/*.c $(INC_DIR)/*.h
+../Docs/latex/*: $(SRC_DIR)/*.c $(INC_DIR)/*.h
+
+documentation: ../Docs/html/* ../Docs/latex/*
+	doxygen ../Doxyfile
 
 clean:
 	rm -f $(OBJ_DIR)/*.o $(EXEC) $(SRC_DIR)/*.c~ $(INC_DIR)/*.h~
