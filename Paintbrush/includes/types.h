@@ -46,7 +46,7 @@ typedef enum BrushSize_s
  */
 typedef enum Speed_s
 {
-    SPEED_NULL =0,  /**< The player is stopped */
+    SPEED_NULL=0,  /**< The player is stopped */
     SPEED_SLOW=2,   /**< The player has a malus (moving slowly) */
     SPEED_AVERAGE=4,/**< The player is moving normally */
     SPEED_FAST=6    /**< The player is moving fastly, he has a bonus */
@@ -134,54 +134,47 @@ typedef struct GameData_s
     Screen display;                 /**< Screen structure to displaying */
 }GameData;
 
-
-
-/** \struct painter
- *  \brief Structure of a painter used everywhere.
- */
-typedef struct painter_s
-{
-    SDL_Texture* spriteRight;   /**< The sprite when the painter is moving to the right */
-    SDL_Texture* spriteLeft;    /**< The sprite when the painter is moving to the left */
-    SDL_Texture** activeSprit;  /**< The sprite that is actually used */
-
-    /** \var SDL_Rect position
-     *  \brief The position and size of the player
-     *
-     *  Actually, the \b x and \b y members of the SDL_Rect struct are used for position
-     *  and the \b h and \b w members of the SDL_Rect struct are equals to brushSize
-     */
-    SDL_Rect position;
-    SDL_Keycode keys[CTRL_KEYS_NUMBER]; /**< The control keys to move the painter */
-
-    int brushSize; /**< Size of the brush of the painter*/
-
-
-    Uint32 color; /**< Coded RGB color of the painter */
-    SDL_Color struct_color; /**< Detailled RGBA color of the painter*/
-
-} painter;
-
 /** \struct Player
  *  \brief Structure of a Player.
  */
 typedef struct player_s
 {
-    painter* Painter;    /**< pointer to the painter of the Player */
-    SDL_bool isdef;         /**< indicator of player existence */
-    char name[NAME_STRING_MAX]; /**< String of NAME_STRING_MAX chars to store the player name */
-    char id;    /**< Identification number of the player (1 to MAX_PLAYERS_NUMBER) */
-    double scoreP;
-    /**< Score of the player.
-     *
-     * \todo Why double ? Long int isn't sufficient ?
-     */
-    SpeedVector speed; /**< The speed of the player*/
-    DirectionVector dir;
-    /**< The direction of the player (8 possibility)
-     * \todo Make the direction totally vectorial on a circle
-     */
-}player;
+  SDL_Texture* spriteRight;   /**< The sprite when the player is moving to the right */
+  SDL_Texture* spriteLeft;    /**< The sprite when the player is moving to the left */
+  SDL_Texture** activeSprite;  /**< The sprite that is actually used */
+
+  /** \var SDL_Rect position
+   *  \brief Position and size
+   *
+   *  Actually, the \b x and \b y members of the SDL_Rect struct are used for position
+   *  and the \b h and \b w members of the SDL_Rect struct are equals to brushSize
+   */
+  SDL_Rect position;
+  SDL_Keycode keys[CTRL_KEYS_NUMBER]; /**< The control keys to move the player */
+
+  BrushSize size; /**< Size of the brush*/
+
+
+  Uint32 color; /**< Coded RGB color */
+  SDL_Color struct_color; /**< Detailled RGBA color*/
+
+  
+  SDL_bool isdef;         /**< indicator of player existence */
+  char name[NAME_STRING_MAX]; /**< String of NAME_STRING_MAX chars to store the player name */
+  char id;    /**< Identification number of the player (0 to MAX_PLAYERS) */
+  double scoreP;
+  
+  /**< Score of the player.
+   *
+   * \todo Why double ? Long int isn't sufficient ?
+   */
+  SpeedVector speed; /**< The speed of the player*/
+
+  DirectionVector dir;
+  /**< The direction of the player (8 possibility)
+   * \todo Make the direction totally vectorial on a circle
+   */
+}Player;
 
 /** @} */
 
