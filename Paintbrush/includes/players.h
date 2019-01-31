@@ -1,5 +1,5 @@
-/** \file players.h
- *  \brief Define players related functions prototypes
+/** \file Players.h
+ *  \brief Define Players related functions prototypes
  *  \author Marius Monnier
  *  \version 0.1
  */
@@ -11,51 +11,51 @@
 #include "fonctions.h"
 #include "types.h"
 
-player* createPlayer();
+Player* createPlayer();
 
-void setSpriteRight(player*,SDL_Texture*);
-void setSpriteLeft(player*,SDL_Texture*);
-void setActiveSprite(player*,SDL_Texture**);
-void setPosition(player*,const int, const int);
-void setBrushSize(player*,const BrushSize);
-void setCtrl(player*,const int,const SDL_Keycode);
-void setCodedColor(player*,const Uint32);
-void setStructColor(player*,const Uint8 ,const Uint8 ,const Uint8 , const Uint8 );
+void setSpriteRight(Player*,SDL_Texture*);
+void setSpriteLeft(Player*,SDL_Texture*);
+void setActiveSprite(Player*,SDL_Texture**);
+void setPosition(Player*,const int, const int);
+void setBrushSize(Player*,const BrushSize);
+void setCtrl(Player*,const int,const SDL_Keycode);
+void setCodedColor(Player*,const Uint32);
+void setStructColor(Player*,const Uint8 ,const Uint8 ,const Uint8 , const Uint8 );
 
-void setDef(player*,const SDL_bool);
-void setName(player*,const char*,const unsigned int);
-void setId(player*,const char);
-void setScore(player*,const double);
-void setSpeedX(player*,const Speed);
-void setSpeedY(player*,const Speed);
-void setSpeed(player*,const Speed,const Speed);
-void setDirectionX(player*,const Direction);
-void setDirectionY(player*,const Direction);
-void setDirection(player*,const Direction,const Direction);
+void setDef(Player*,const SDL_bool);
+void setName(Player*,const char*,const unsigned int);
+void setId(Player*,const char);
+void setScore(Player*,const double);
+void setSpeedX(Player*,const Speed);
+void setSpeedY(Player*,const Speed);
+void setSpeed(Player*,const Speed,const Speed);
+void setDirectionX(Player*,const Direction);
+void setDirectionY(Player*,const Direction);
+void setDirection(Player*,const Direction,const Direction);
 
-SDL_Texture* getSpriteRight(const player*);
-SDL_Texture* getSpriteLeft(const player*);
-SDL_Texture* getActiveSprite(const player*);
-int getX(const player*);
-int getY(const player*);
-SDL_Keycode getCtrlRight(const player*);
-SDL_Keycode getCtrlLeft(const player*);
-SDL_Keycode getCtrlDown(const player*);
-SDL_Keycode getCtrlUp(const player*);
-Uint32 getCodedColor(const player*);
-SDL_Color getStructColor(const player*);
+SDL_Texture* getSpriteRight(const Player*);
+SDL_Texture* getSpriteLeft(const Player*);
+SDL_Texture* getActiveSprite(const Player*);
+int getX(const Player*);
+int getY(const Player*);
+SDL_Keycode getCtrlRight(const Player*);
+SDL_Keycode getCtrlLeft(const Player*);
+SDL_Keycode getCtrlDown(const Player*);
+SDL_Keycode getCtrlUp(const Player*);
+Uint32 getCodedColor(const Player*);
+SDL_Color getStructColor(const Player*);
 
-SDL_bool isDef(const player*);
-char* getName(const player*);
-char getId(const player*);
-double getScore(const player*);
-Speed getXSpeed(const player*);
-Speed getYSpeed(const player*);
-Direction getXDir(const player*);
-Direction getYDir(const player*);
+SDL_bool isDef(const Player*);
+char* getName(const Player*);
+char getId(const Player*);
+double getScore(const Player*);
+Speed getXSpeed(const Player*);
+Speed getYSpeed(const Player*);
+Direction getXDir(const Player*);
+Direction getYDir(const Player*);
 
-void movePlayer(player*);
-int deletePlayer(player* play);
+void movePlayer(Player*);
+int deletePlayer(Player* play);
 int deleteAllPlayers();
 
 #endif

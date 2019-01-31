@@ -15,7 +15,7 @@ static GameState gestionClavier( SDL_Event event,
                           int numberOfPainters );
 
 extern GameData* data;
-extern player* players[];
+extern Player* Players[];
 
 void launch_menu(void)
 {
@@ -23,15 +23,15 @@ void launch_menu(void)
 
     do
     {
-        printf( "How many players ? [1 à 4] : " );
+        printf( "How many Players ? [1 à 4] : " );
         scanf( "%1ud", &data->numberOfPlayer );
         CLEAR_BUFFER;
     }
     while( data->numberOfPlayer < 1 || data->numberOfPlayer > MAX_PLAYERS );
-    
+
     for( index = 0; index < data->numberOfPlayer; index++ )
     {
-        if( ( players[index] = createPlayer() ) != (player*)NULL )
+        if( ( Players[index] = createPlayer() ) != (Player*)NULL )
         {
             SDL_LogMessage( SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO,
             "Player (%d) created with success", index );
@@ -39,8 +39,8 @@ void launch_menu(void)
         else
         {
             SDL_LogError( SDL_LOG_CATEGORY_ERROR,
-                          "During player creation (see above message)" );
-            deletePlayer( players[index] );
+                          "During Player creation (see above message)" );
+            deletePlayer( Players[index] );
             break;
         }
     }
@@ -83,10 +83,10 @@ static void game( void )
             {
                 /* Display functions*/
                 displaySprites();
-                /* Move player functions */
+                /* Move Player functions */
                 for( index = 0; index < data->numberOfPlayer; index++ )
                 {
-                    movePlayer( players[index] );
+                    movePlayer( Players[index] );
                 }
                 /* Time loop */
                 t_actu = SDL_GetTicks();
@@ -134,23 +134,23 @@ static GameState gestionClavier( SDL_Event event,
         default:
             for( i = 0; i < numberOfPainters; i++ )
             {
-                if( key == players[i]->Painter->keys[CTRL_KEY_UP] )
+                if( key == Players[i]->Painter->keys[CTRL_KEY_UP] )
                 {
-                    setDirectionY( players[i], DIR_REVERSE );
+                    setDirectionY( Players[i], DIR_REVERSE );
                 }
-                else if( key == players[i]->Painter->keys[CTRL_KEY_DOWN] )
+                else if( key == Players[i]->Painter->keys[CTRL_KEY_DOWN] )
                 {
-                    setDirectionY( players[i], DIR_ACTIVE );
+                    setDirectionY( Players[i], DIR_ACTIVE );
                 }
-                else if( key == players[i]->Painter->keys[CTRL_KEY_RIGHT] )
+                else if( key == Players[i]->Painter->keys[CTRL_KEY_RIGHT] )
                 {
-                    setDirectionX( players[i], DIR_ACTIVE );
-                    players[i]->Painter->activeSprit = &( players[i]->Painter->spriteRight );
+                    setDirectionX( Players[i], DIR_ACTIVE );
+                    Players[i]->Painter->activeSprit = &( Players[i]->Painter->spriteRight );
                 }
-                else if( key == players[i]->Painter->keys[CTRL_KEY_LEFT] )
+                else if( key == Players[i]->Painter->keys[CTRL_KEY_LEFT] )
                 {
-                    setDirectionX( players[i], DIR_REVERSE );
-                    players[i]->Painter->activeSprit = &( players[i]->Painter->spriteLeft );
+                    setDirectionX( Players[i], DIR_REVERSE );
+                    Players[i]->Painter->activeSprit = &( Players[i]->Painter->spriteLeft );
                 }
             }
             quit = STATE_PLAYING;
@@ -171,17 +171,17 @@ static int set_scores(void)
         {
             for( index = 0; index < data->numberOfPlayer; index++ )
             {
-                if( players[index]->Painter->color == getPixel(surface, pixel.x, pixel.y))
+                if( Players[index]->Painter->color == getPixel(surface, pixel.x, pixel.y))
                 {
 
-                    players[index]->scoreP++;
+                    Players[index]->scoreP++;
                 }
             }
         }
     }
     for( index = 0; index < ( unsigned )data->numberOfPlayer; index++ )
     {
-        printf("Player %s has %0.2f%% of screen\n", players[index]->name, (players[index]->scoreP*100)/(surface->h*surface->w));
+        printf("Player %s has %0.2f%% of screen\n", Players[index]->name, (Players[index]->scoreP*100)/(surface->h*surface->w));
     }
     return 0;
 }
@@ -192,7 +192,7 @@ static void displaySprites(void)
     /* Certitude de dessiner sur la fenêtre VIDE*/
     SDL_SetRenderTarget( *data->renderer, NULL );
     SDL_RenderClear( *data->renderer );
-    /* Background -> Foreground -> Each player */
+    /* Background -> Foreground -> Each Player */
     SDL_RenderCopy( *data->renderer, data->display.background, NULL, NULL );
 
     drawPaintersRect();
@@ -201,8 +201,8 @@ static void displaySprites(void)
     SDL_RenderCopy( *data->renderer, data->display.foreground, NULL, NULL );
     for( index = 0; index < data->numberOfPlayer; index++ )
     {
-        SDL_RenderCopy( *data->renderer, *players[index]->Painter->activeSprit,
-                        NULL, &players[index]->Painter->position );
+        SDL_RenderCopy( *data->renderer, *Players[index]->Painter->activeSprit,
+                        NULL, &Players[index]->Painter->position );
     }
     SDL_RenderPresent( *data->renderer );
 }
@@ -215,13 +215,13 @@ static void drawPaintersRect(void)
     SDL_SetRenderTarget( *data->renderer, data->display.foreground );
     for( index = 0; index < data->numberOfPlayer; index++ )
     {
-        setRenderDrawColor(*data->renderer, &players[index]->Painter->struct_color);
-        paint = players[index]->Painter->position;
+        setRenderDrawColor(*data->renderer, &Players[index]->Painter->struct_color);
+        paint = Players[index]->Painter->position;
 
         paint.y += paint.h/2;
-        paint.h = paint.w = players[index]->Painter->brushSize;
+        paint.h = paint.w = Players[index]->Painter->brushSize;
         SDL_RenderFillRect( *data->renderer, &paint );
-        SDL_FillRect(data->display.readable_foreground, &paint, players[index]->Painter->color);
+        SDL_FillRect(data->display.readable_foreground, &paint, Players[index]->Painter->color);
     }
 }
 
@@ -332,5 +332,3 @@ int initWindowAndRenderer( SDL_Window** window, SDL_Renderer** renderer,
     }
     return ret;
 }
-
-

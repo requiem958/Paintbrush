@@ -1,22 +1,21 @@
-/** \file players.c
- *  \brief Implement public players related functions and static painters related functions
+/** \file Players.c
+ *  \brief Implement public Players related functions and static painters related functions
  *  \author Marius Monnier
  *  \version 0.1
  */
 
 
-#include "players.h"
 
 
 extern GameData* data;
-extern player* players[];
+extern Player* Players[];
 
 /* Allocator */
 
-static player* allocPlayer()
+static Player* allocPlayer()
 {
-  player* temp;
-  temp = malloc(sizeof(player));
+  Player* temp;
+  temp = malloc(sizeof(Player));
   if(temp == NULL)
     SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Memory error");
   return temp;
@@ -24,7 +23,7 @@ static player* allocPlayer()
 
 /* Setters */
 
-void setSpriteRight(player* p, SDL_Texture* t)
+void setSpriteRight(Player* p, SDL_Texture* t)
 {
   if (p != NULL)
     {
@@ -32,7 +31,7 @@ void setSpriteRight(player* p, SDL_Texture* t)
     }
 }
 
-void setSpriteLeft(player* p, SDL_Texture* t)
+void setSpriteLeft(Player* p, SDL_Texture* t)
 {
   if (p != NULL)
     {
@@ -40,7 +39,7 @@ void setSpriteLeft(player* p, SDL_Texture* t)
     }
 }
 
-void setActiveSprite(player* p, SDL_Texture** t)
+void setActiveSprite(Player* p, SDL_Texture** t)
 {
   if (p != NULL)
     {
@@ -49,11 +48,11 @@ void setActiveSprite(player* p, SDL_Texture** t)
       else if (*t == getSpriteRight(p) || *t == getSpriteLeft(p))
 	p->activeSprite = t;
       else
-	SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Attempt to defigurate player (%s)", getName(p));
+	SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Attempt to defigurate Player (%s)", getName(p));
     }
 }
 
-void setPosition( player* p, const int x, const int y )
+void setPosition( Player* p, const int x, const int y )
 {
   if( p != NULL )
     {
@@ -64,7 +63,7 @@ void setPosition( player* p, const int x, const int y )
     }
 }
 
-void setBrushSize(player* p, const BrushSize size)
+void setBrushSize(Player* p, const BrushSize size)
 {
   if(p != NULL)
     {
@@ -73,7 +72,7 @@ void setBrushSize(player* p, const BrushSize size)
     }
 }
 
-void setCtrl(player *p, const int index, const SDL_Keycode key)
+void setCtrl(Player *p, const int index, const SDL_Keycode key)
 {
   if(p != NULL)
     {
@@ -84,7 +83,7 @@ void setCtrl(player *p, const int index, const SDL_Keycode key)
     }
 }
 
-void setCodedColor( player* p, const Uint32 c )
+void setCodedColor( Player* p, const Uint32 c )
 {
   if(p != NULL)
     {
@@ -92,7 +91,7 @@ void setCodedColor( player* p, const Uint32 c )
     }
 }
 
-void setStructColor( player* p, const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a )
+void setStructColor( Player* p, const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a )
 {
   if(p != NULL)
     {
@@ -103,13 +102,13 @@ void setStructColor( player* p, const Uint8 r, const Uint8 g, const Uint8 b, con
     }
 }
 
-void setDef(player* p, const SDL_bool b)
+void setDef(Player* p, const SDL_bool b)
 {
   if (p != NULL)
     p->isdef = b;
 }
 
-void setName(player* p, const char* name, const unsigned int size)
+void setName(Player* p, const char* name, const unsigned int size)
 {
   if (p != NULL)
     {
@@ -120,7 +119,7 @@ void setName(player* p, const char* name, const unsigned int size)
     }
 }
 
-void setId(player* p, const char id)
+void setId(Player* p, const char id)
 {
   if (p != NULL)
     {
@@ -131,7 +130,7 @@ void setId(player* p, const char id)
     }
 }
 
-void setScore(player* p, double score)
+void setScore(Player* p, double score)
 {
   if(p != NULL)
     {
@@ -139,7 +138,7 @@ void setScore(player* p, double score)
     }
 }
 
-void setSpeed(player* p, Speed sx, Speed sy)
+void setSpeed(Player* p, Speed sx, Speed sy)
 {
   if (p != NULL)
     {
@@ -148,7 +147,7 @@ void setSpeed(player* p, Speed sx, Speed sy)
     }
 }
 
-void setDirectionX( player* p, const Direction dx )
+void setDirectionX( Player* p, const Direction dx )
 {
   if(p != NULL)
     {
@@ -158,7 +157,7 @@ void setDirectionX( player* p, const Direction dx )
     }
 }
 
-void setDirectionY( player* p, const Direction dy )
+void setDirectionY( Player* p, const Direction dy )
 {
   if(p != NULL)
     {
@@ -168,7 +167,7 @@ void setDirectionY( player* p, const Direction dy )
     }
 }
 
-void setDirection( player* p, const Direction dx, const Direction dy)
+void setDirection( Player* p, const Direction dx, const Direction dy)
 {
   if(p != NULL)
     {
@@ -179,7 +178,7 @@ void setDirection( player* p, const Direction dx, const Direction dy)
 
 /*Initialisation*/
 
-static int initPlayer(player* p)
+static int initPlayer(Player* p)
 {
   int ret = EXIT_SUCCESS;
 
@@ -208,7 +207,7 @@ static int initPlayer(player* p)
 
 /*Destructor */
 
-int deletePlayer( player* play )
+int deletePlayer( Player* play )
 {
   int ret = EXIT_SUCCESS;
   if( play != NULL)
@@ -241,16 +240,16 @@ int deletePlayer( player* play )
 
 
 
-/** \fn player* createPlayer()
- *  \brief Function that create a player in interaction with user
- *  \return A pointer to the created player if success, NULL otherwise.
+/** \fn Player* createPlayer()
+ *  \brief Function that create a Player in interaction with user
+ *  \return A pointer to the created Player if success, NULL otherwise.
  *
- *  \todo Change the way to preconfigured players.
+ *  \todo Change the way to preconfigured Players.
  */
-player* createPlayer()
+Player* createPlayer()
 {
   static unsigned char actual_id = 0;
-  player* p = NULL;
+  Player* p = NULL;
   SDL_Color* color = NULL;
 
   if( (p = allocPlayer()) != NULL)
@@ -259,7 +258,7 @@ player* createPlayer()
         {
 	  p->id = actual_id;
 	  color = &(p->Painter->struct_color);
-	  printf( "Please enter a name for that young player (31 letters max):" );
+	  printf( "Please enter a name for that young Player (31 letters max):" );
 	  readline( p->name, NAME_STRING_MAX );
 	  printf( "Now type the three (r,g,b) components of his color :" );
 	  scanf( "%3u %3u %3u", &color->r,&color->g,&color->b );
@@ -322,12 +321,12 @@ player* createPlayer()
   return p;
 }
 
-void movePlayer( player* p )
+void movePlayer( Player* p )
 {
   if( p==NULL );
   else
     {
-      /* Update player position*/
+      /* Update Player position*/
       p->Painter->position.y += ( p->speed.y )*( p->dir.y );
       p->Painter->position.x += ( p->speed.x )*( p->dir.x );
       /* RIGHT */
@@ -356,13 +355,13 @@ int deleteAllPlayers()
   int ret = EXIT_SUCCESS;
   while( data->numberOfPlayer-- >0 )
     {
-      if( players[data->numberOfPlayer]->isdef
-	  && players[data->numberOfPlayer]->Painter != NULL )
+      if( Players[data->numberOfPlayer]->isdef
+	  && Players[data->numberOfPlayer]->Painter != NULL )
         {
-	  if( deletePlayer( players[data->numberOfPlayer] ) != EXIT_SUCCESS )
+	  if( deletePlayer( Players[data->numberOfPlayer] ) != EXIT_SUCCESS )
             {
 	      SDL_LogError( SDL_LOG_CATEGORY_ERROR,
-			    "During player deleting (see above)" );
+			    "During Player deleting (see above)" );
 	      ret = EXIT_FAILURE;
             }
         }

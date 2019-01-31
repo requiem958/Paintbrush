@@ -10,8 +10,8 @@
 
 /**< Global parameters var*/
 GameData* data = NULL;
-/**< Global player tab*/
-player* players[MAX_PLAYERS];
+/**< Global Player tab*/
+Player* Players[MAX_PLAYERS];
 
 int main( void )
 {
