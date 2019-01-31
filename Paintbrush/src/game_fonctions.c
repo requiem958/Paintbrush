@@ -70,7 +70,7 @@ void launch_replay(void)
 static void game( void )
 {
     unsigned int t_actu = 0, t_preced = 0;
-    long  int delay = 100 K;
+    long  int delay = 100;
     unsigned char index = 0;
     SDL_Event event;
 
@@ -134,23 +134,23 @@ static GameState gestionClavier( SDL_Event event,
         default:
             for( i = 0; i < numberOfPainters; i++ )
             {
-                if( key == Players[i]->Painter->keys[CTRL_KEY_UP] )
+                if( key == Players[i]->keys[CTRL_KEY_UP] )
                 {
                     setDirectionY( Players[i], DIR_REVERSE );
                 }
-                else if( key == Players[i]->Painter->keys[CTRL_KEY_DOWN] )
+                else if( key == Players[i]->keys[CTRL_KEY_DOWN] )
                 {
                     setDirectionY( Players[i], DIR_ACTIVE );
                 }
-                else if( key == Players[i]->Painter->keys[CTRL_KEY_RIGHT] )
+                else if( key == Players[i]->keys[CTRL_KEY_RIGHT] )
                 {
                     setDirectionX( Players[i], DIR_ACTIVE );
-                    Players[i]->Painter->activeSprit = &( Players[i]->Painter->spriteRight );
+                    Players[i]->activeSprite= &( Players[i]->spriteRight );
                 }
-                else if( key == Players[i]->Painter->keys[CTRL_KEY_LEFT] )
+                else if( key == Players[i]->keys[CTRL_KEY_LEFT] )
                 {
                     setDirectionX( Players[i], DIR_REVERSE );
-                    Players[i]->Painter->activeSprit = &( Players[i]->Painter->spriteLeft );
+                    Players[i]->activeSprite= &( Players[i]->spriteLeft );
                 }
             }
             quit = STATE_PLAYING;
@@ -171,7 +171,7 @@ static int set_scores(void)
         {
             for( index = 0; index < data->numberOfPlayer; index++ )
             {
-                if( Players[index]->Painter->color == getPixel(surface, pixel.x, pixel.y))
+                if( Players[index]->color == getPixel(surface, pixel.x, pixel.y))
                 {
 
                     Players[index]->scoreP++;
@@ -201,8 +201,8 @@ static void displaySprites(void)
     SDL_RenderCopy( *data->renderer, data->display.foreground, NULL, NULL );
     for( index = 0; index < data->numberOfPlayer; index++ )
     {
-        SDL_RenderCopy( *data->renderer, *Players[index]->Painter->activeSprit,
-                        NULL, &Players[index]->Painter->position );
+        SDL_RenderCopy( *data->renderer, *Players[index]->activeSprite,
+                        NULL, &Players[index]->position );
     }
     SDL_RenderPresent( *data->renderer );
 }
@@ -215,13 +215,13 @@ static void drawPaintersRect(void)
     SDL_SetRenderTarget( *data->renderer, data->display.foreground );
     for( index = 0; index < data->numberOfPlayer; index++ )
     {
-        setRenderDrawColor(*data->renderer, &Players[index]->Painter->struct_color);
-        paint = Players[index]->Painter->position;
+        setRenderDrawColor(*data->renderer, &Players[index]->struct_color);
+        paint = Players[index]->position;
 
         paint.y += paint.h/2;
-        paint.h = paint.w = Players[index]->Painter->brushSize;
+        paint.h = paint.w = Players[index]->size;
         SDL_RenderFillRect( *data->renderer, &paint );
-        SDL_FillRect(data->display.readable_foreground, &paint, Players[index]->Painter->color);
+        SDL_FillRect(data->display.readable_foreground, &paint, Players[index]->color);
     }
 }
 
@@ -283,7 +283,8 @@ int initSDLSystems( FPSmanager* manager )
     else
     {
         SDL_LogSetAllPriority( SDL_LOG_PRIORITY_DEBUG );
-        SDL_initFramerate( (FPSmanager*) &manager );
+        SDL_initFramerate(manager);
+
         if( manager == NULL )
         {
             fprintf( stderr, "Can't init FPSManager : %s\n", SDL_GetError() );
@@ -291,7 +292,7 @@ int initSDLSystems( FPSmanager* manager )
         }
         else
         {
-            if( SDL_setFramerate( (FPSmanager*) &manager, NB_IMG_PER_SECOND ) == -1 )
+            if( SDL_setFramerate( manager, NB_IMG_PER_SECOND ) == -1 )
             {
                 fprintf( stderr, "Can't set framerate to %d : %s\n", NB_IMG_PER_SECOND, SDL_GetError() );
                 ret = EXIT_FAILURE;
